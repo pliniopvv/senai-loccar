@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row flex-wrap">
     @for (veiculo of list; track $index) {
-      <app-veiculo-item [model]="veiculo" />
+      <app-veiculo-item [model]="veiculo" class="w-25" />
     }
   </div>
 </div>
