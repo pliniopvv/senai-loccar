@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Veiculo } from '../../../model/veiculo';
+import { FavoritosService } from '../../../service/favoritos.service';
 
 @Component({
   selector: 'app-veiculo-item',
@@ -8,4 +9,12 @@ import { Veiculo } from '../../../model/veiculo';
 })
 export class VeiculoItemComponent {
   @Input() model: Veiculo;
+
+  constructor(private fav: FavoritosService) {
+
+  }
+
+  isFav() {
+    return this.fav.has(this.model.id);
+  }
 }

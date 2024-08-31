@@ -1,5 +1,8 @@
 <div class="card m-1">
   <div class="card-body p-2 m-2">
+    <div class="float-end text-success" *ngIf="isFav()">
+      <i class="bi bi-bookmark-heart"></i>
+    </div>
     <div class="d-flex justify-content-center align-items-center flex-column">
       <div class="fw-bold">{{ model.name }}</div>
       <div>
@@ -11,10 +14,12 @@
         />
       </div>
       <div>{{ model.description }}</div>
-      <div>{{ model.year | date: 'yyyy' }}</div>
+      <div>{{ model.year | date : "yyyy" }}</div>
       <div>R$ {{ model.pricePerDay }}</div>
       <div class="d-grid gap-2 w-100">
-        <button class="btn btn-primary" routerLink="/details/{{ model.id }}">Ver mais</button>
+        <button class="btn btn-primary" routerLink="/details/{{ model.id }}">
+          Ver mais
+        </button>
       </div>
     </div>
   </div>
