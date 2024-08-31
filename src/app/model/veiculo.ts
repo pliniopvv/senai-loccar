@@ -1,5 +1,5 @@
 export class Veiculo {
-  id: string;
+  id: number;
   name: string;
   year: number;
   type: string;
