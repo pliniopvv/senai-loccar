@@ -11,6 +11,7 @@ import { VeiculoContainerComponent } from './shared/veiculo-container/veiculo-co
 import { VeiculoItemComponent } from './shared/veiculo-container/veiculo-item/veiculo-item.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [

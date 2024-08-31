@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FavoritosService } from '../../service/favoritos.service';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,13 @@ export class HeaderComponent {
     // { title: 'Detalhes', path: 'details' },
   ];
 
-  constructor(public route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private favService: FavoritosService
+  ) {}
+
+  countFav() {
+    return this.favService.list().length;
+  }
 
 }

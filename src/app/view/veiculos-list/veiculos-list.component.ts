@@ -9,13 +9,24 @@ import { Veiculo } from '../../model/veiculo';
 })
 export class VeiculosListComponent implements OnInit {
 
+  name: string = "";
   veiculos: Veiculo[] = [];
+  cache: Veiculo[] = [];
 
-  constructor(private service: VeiculosService) {}
+  constructor(private service: VeiculosService) { }
 
   async ngOnInit(): Promise<void> {
     const list = await this.service.list();
-    this.veiculos = list;
+    this.cache = list;
+    this.veiculos = [...list];
+  }
+
+  filter() {
+    const list = this.cache.filter(x => x.name.indexOf(this.name) != -1);
+    if (list)
+      this.veiculos = [...list];
+    else
+      this.veiculos = [...this.cache];
   }
 
 }

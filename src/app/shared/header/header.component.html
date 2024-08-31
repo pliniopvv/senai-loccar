@@ -16,11 +16,28 @@
       <ul class="navbar-nav">
         @for (link of links; track $index) {
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" [routerLink]="link.path" routerLinkActive="active">
-            {{ link.title }}</a>
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            [routerLink]="link.path"
+            routerLinkActive="active"
+          >
+            {{ link.title }}</a
+          >
         </li>
         }
       </ul>
+    </div>
+    <div class="float-end">
+      <button type="button" class="btn btn-dark position-relative">
+        <i class="bi bi-heart-fill"></i>
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          {{ countFav() }}
+        </span>
+      </button>
     </div>
   </div>
 </nav>

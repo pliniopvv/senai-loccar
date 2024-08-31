@@ -1,3 +1,9 @@
+<div class="row p-2">
+  <div class="col-2 text-end align-items-center">Pesquisar</div>
+  <div class="col">
+    <input type="text" class="form-control" name="content" id="" [(ngModel)]="name" (change)="filter()" />
+  </div>
+</div>
 <app-veiculo-container [list]="veiculos"></app-veiculo-container>
 <!-- Espaço em branco -->
 <div style="height: 100px"></div>
